@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A1 — Instagram Visual Portfolio | Oner Active × Hyrox</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--k:#111;--w:#FAFAFA;--mid:#888;--border:#DDD;--off:#F5F5F5}
+body{background:var(--w);font-family:'Montserrat',sans-serif;color:var(--k)}
+
+/* PAGE HEADER */
+.ph{background:var(--k);padding:32px 48px 24px}
+.ph-tag{border:1px solid rgba(255,255,255,.18);display:inline-block;
+  padding:3px 10px;font-size:8px;font-weight:700;letter-spacing:.18em;
+  text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:12px}
+.ph h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(36px,8vw,84px);
+  letter-spacing:.02em;line-height:.88;color:#fff}
+.ph-meta{display:flex;gap:24px;flex-wrap:wrap;margin-top:12px;
+  padding-top:10px;border-top:1px solid rgba(255,255,255,.08)}
+.ph-meta .l{font-size:8px;font-weight:700;letter-spacing:.14em;
+  text-transform:uppercase;color:rgba(255,255,255,.3);display:block;margin-bottom:2px}
+.ph-meta .v{font-size:11px;color:#fff}
+
+/* SECTION LABEL */
+.sec{font-size:8px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--mid);padding:24px 48px 14px;display:flex;align-items:center;gap:12px}
+.sec::after{content:'';flex:1;height:1px;background:var(--border)}
+
+/* FEED GRID — 3 columns of 1:1 cards */
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--k)}
+
+/* BASE CARD */
+.card{aspect-ratio:1;position:relative;overflow:hidden;background:#111;cursor:pointer}
+
+/* Every card: product image fills the frame, overlay for text */
+.card img.prod{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;object-position:top center;
+  transition:transform .45s ease;
+  display:block
+}
+.card:hover img.prod{transform:scale(1.06)}
+.grad{position:absolute;inset:0;z-index:2;pointer-events:none}
+
+/* CARD 1 — Kit Guide: product full frame + minimal text bottom */
+.c1 .grad{background:linear-gradient(to top,rgba(0,0,0,.88) 0%,rgba(0,0,0,.0) 45%)}
+.c1-copy{position:absolute;bottom:14px;left:14px;right:14px;z-index:5}
+.c1-hl{font-family:'Bebas Neue',sans-serif;font-size:clamp(20px,3.2vw,38px);
+  letter-spacing:.04em;color:#fff;line-height:.92;display:block}
+.c1-sub{font-size:8px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;
+  color:rgba(255,255,255,.5);margin-top:4px;display:block}
+
+/* CARD 2 — Ambassador: product left, text right in split */
+.c2 img.prod{width:60%;height:100%;object-fit:cover;object-position:top center;left:0}
+.c2 .grad{background:linear-gradient(to right,transparent 40%,rgba(0,0,0,.95) 60%)}
+.c2-panel{position:absolute;right:0;top:0;bottom:0;width:42%;z-index:5;
+  display:flex;flex-direction:column;justify-content:center;padding:14px 12px 14px 6px}
+.c2-name{font-family:'Bebas Neue',sans-serif;font-size:clamp(18px,2.8vw,32px);
+  letter-spacing:.02em;line-height:.9;color:#fff}
+.c2-rule{width:24px;height:2px;background:#fff;margin:8px 0}
+.c2-q{font-size:8px;font-weight:300;font-style:italic;color:rgba(255,255,255,.65);
+  line-height:1.55;margin-bottom:7px}
+.c2-hndl{font-size:7px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#fff}
+.c2-stats{display:flex;flex-direction:column;gap:3px;margin-top:5px}
+.c2-stats .sv{font-family:'Bebas Neue',sans-serif;font-size:14px;color:#fff;line-height:1}
+.c2-stats .sl{font-size:6px;color:rgba(255,255,255,.38);text-transform:uppercase;letter-spacing:.08em}
+
+/* CARD 3 — Product spotlight: image tall left, feature list right */
+.c3 img.prod{width:55%;height:100%;object-fit:cover;object-position:top center}
+.c3 .grad{background:linear-gradient(to right,transparent 35%,#111 58%)}
+.c3-panel{position:absolute;right:0;top:0;bottom:0;width:46%;z-index:5;
+  display:flex;flex-direction:column;justify-content:center;padding:12px 10px 12px 4px}
+.c3-label{font-size:7px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  color:rgba(255,255,255,.4);margin-bottom:3px}
+.c3-name{font-family:'Bebas Neue',sans-serif;font-size:clamp(14px,2.2vw,22px);
+  letter-spacing:.03em;color:#fff;line-height:.92;margin-bottom:10px}
+.c3-feats{display:flex;flex-direction:column;gap:4px}
+.c3-feat{border-left:1.5px solid #fff;padding-left:6px}
+.c3-feat .fn{font-size:7px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;
+  color:#fff;display:block}
+.c3-feat .fd{font-size:7px;color:rgba(255,255,255,.5);line-height:1.35}
+.c3-slide{position:absolute;top:12px;right:10px;z-index:6;font-size:8px;
+  font-weight:700;letter-spacing:.1em;color:rgba(255,255,255,.5)}
+
+/* CARD 4 — UGC template: two products side by side + hashtag overlay */
+.c4 img.prod{width:50%;height:100%;object-fit:cover;object-position:top center}
+.c4 img.prod2{position:absolute;right:0;top:0;width:50%;height:100%;
+  object-fit:cover;object-position:top center;z-index:1}
+.c4 .grad{background:rgba(0,0,0,.55);z-index:3}
+.c4-frame{position:absolute;inset:10px;border:1.5px solid rgba(255,255,255,.4);z-index:6}
+.c4-mid{position:absolute;inset:0;z-index:6;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;padding:20px}
+.c4-lbl{font-size:7px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+  color:rgba(255,255,255,.45);margin-bottom:7px}
+.c4-ph{font-size:8px;font-weight:300;color:rgba(255,255,255,.3);line-height:1.7;margin-bottom:12px}
+.c4-hash{font-family:'Bebas Neue',sans-serif;font-size:clamp(16px,2.5vw,28px);
+  letter-spacing:.03em;color:#fff;line-height:.95}
+.c4-hnds{font-size:6px;font-weight:500;color:rgba(255,255,255,.28);margin-top:9px;letter-spacing:.06em}
+
+/* CARD 5 — Infographic: product background + station grid overlay */
+.c5 .grad{background:rgba(0,0,0,.62);z-index:2}
+.c5-body{position:absolute;inset:0;z-index:5;padding:12px 12px 38px}
+.c5-ttl{font-family:'Bebas Neue',sans-serif;font-size:16px;
+  letter-spacing:.04em;color:#fff;line-height:.92;margin-bottom:8px}
+.c5-sg{display:grid;grid-template-columns:1fr 1fr;gap:2px;height:calc(100% - 40px)}
+.c5-st{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);
+  padding:5px 7px;display:flex;flex-direction:column;gap:1px}
+.c5-st .sn{font-family:'Bebas Neue',sans-serif;font-size:18px;color:#fff;line-height:1}
+.c5-st .st{font-size:7px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:#fff}
+.c5-st .sk{font-size:7px;color:rgba(255,255,255,.42);line-height:1.3}
+
+/* CARD 6 — Drop teaser: product full bleed, bold countdown */
+.c6 .grad{background:rgba(0,0,0,.65);z-index:2}
+.c6-corners .tl,.c6-corners .br{position:absolute;width:20px;height:20px;z-index:6}
+.c6-corners .tl{top:11px;left:11px;border-top:2px solid #fff;border-left:2px solid #fff}
+.c6-corners .br{bottom:36px;right:11px;border-bottom:2px solid #fff;border-right:2px solid #fff}
+.c6-mid{position:absolute;inset:0;z-index:6;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;padding:20px}
+.c6-pre{font-size:7px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;
+  color:rgba(255,255,255,.45);margin-bottom:7px}
+.c6-num{font-family:'Bebas Neue',sans-serif;font-size:clamp(60px,11vw,94px);
+  letter-spacing:-.03em;color:#fff;line-height:.8}
+.c6-unit{font-size:8px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;
+  color:rgba(255,255,255,.32);margin-bottom:14px}
+.c6-copy{font-family:'Bebas Neue',sans-serif;font-size:clamp(18px,3vw,28px);
+  letter-spacing:.05em;color:#fff;line-height:1}
+.c6-ev{margin-top:9px;font-size:7px;font-weight:500;letter-spacing:.12em;
+  text-transform:uppercase;color:rgba(255,255,255,.32);
+  border:1px solid rgba(255,255,255,.1);padding:3px 8px}
+
+/* SHARED top tag */
+.tag{position:absolute;top:11px;left:11px;z-index:8;
+  background:#fff;color:#000;font-size:8px;font-weight:700;letter-spacing:.1em;padding:2px 7px}
+.wm{position:absolute;bottom:11px;left:11px;z-index:8;
+  font-family:'Bebas Neue',sans-serif;font-size:12px;letter-spacing:.1em;color:rgba(255,255,255,.6)}
+
+/* STORIES ROW */
+.s-row{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--k);max-width:640px}
+.s-card{aspect-ratio:9/16;position:relative;overflow:hidden;background:#111;cursor:pointer}
+.s-card img.prod{position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;object-position:top center;transition:transform .45s ease;z-index:1}
+.s-card:hover img.prod{transform:scale(1.05)}
+
+/* Story chrome */
+.s-prog{position:absolute;top:0;left:0;right:0;height:2px;
+  background:rgba(255,255,255,.2);z-index:15;display:flex;gap:2px;padding:0 9px}
+.sp-f{height:100%;flex:1;background:#fff;border-radius:1px}
+.sp-e{height:100%;flex:1;background:rgba(255,255,255,.22);border-radius:1px}
+.s-hdr{position:absolute;top:9px;left:9px;right:9px;z-index:15;
+  display:flex;align-items:center;gap:7px}
+.s-av{width:24px;height:24px;border-radius:50%;border:1.5px solid #fff;background:#111;
+  display:flex;align-items:center;justify-content:center;
+  font-size:7px;font-weight:800;color:#fff;flex-shrink:0}
+.s-acc{font-size:8px;font-weight:700;color:#fff;letter-spacing:.04em}
+.s-time{font-size:7px;color:rgba(255,255,255,.45);margin-left:auto}
+
+/* Story 1 — poll */
+.s1-fade{position:absolute;inset:0;z-index:2;
+  background:linear-gradient(to top,rgba(0,0,0,.95) 0%,rgba(0,0,0,.3) 40%,rgba(0,0,0,.1) 100%)}
+.s1-body{position:absolute;inset:0;z-index:5;
+  display:flex;flex-direction:column;justify-content:flex-end;padding:46px 14px 52px}
+.s1-q{font-family:'Bebas Neue',sans-serif;font-size:clamp(17px,4vw,25px);
+  letter-spacing:.04em;color:#fff;line-height:1;margin-bottom:12px}
+.s1-opts{display:flex;flex-direction:column;gap:4px}
+.s1-opt{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);
+  padding:8px 10px;font-size:10px;font-weight:500;color:#fff;cursor:pointer;
+  transition:all .2s;text-align:left}
+.s1-opt:hover,.s1-opt.active{background:#fff;color:#000;border-color:#fff}
+.s1-foot{position:absolute;bottom:12px;left:0;right:0;text-align:center;z-index:6;
+  font-size:7px;font-weight:700;letter-spacing:.12em;color:rgba(255,255,255,.45);text-transform:uppercase}
+
+/* Story 2 — countdown */
+.s2-fade{position:absolute;inset:0;z-index:2;background:rgba(0,0,0,.65)}
+.s2-body{position:absolute;inset:0;z-index:5;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;padding:46px 18px 52px}
+.s2-ico{width:40px;height:40px;border-radius:50%;background:#fff;
+  display:flex;align-items:center;justify-content:center;font-size:16px;margin-bottom:10px}
+.s2-lbl{font-size:7px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
+  color:rgba(255,255,255,.4);margin-bottom:5px}
+.s2-time{font-family:'Bebas Neue',sans-serif;font-size:48px;
+  letter-spacing:-.02em;color:#fff;line-height:.88;margin-bottom:3px}
+.s2-unit{font-size:7px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;
+  color:rgba(255,255,255,.3);margin-bottom:14px}
+.s2-ev{font-family:'Bebas Neue',sans-serif;font-size:15px;letter-spacing:.04em;color:#fff;line-height:1}
+.s2-ev span{display:block;font-size:19px}
+.s2-hash{font-size:8px;font-weight:700;letter-spacing:.1em;color:#fff;margin-top:9px;text-transform:uppercase}
+.s2-btn{position:absolute;bottom:12px;left:12px;right:12px;z-index:6;
+  background:#fff;color:#000;padding:10px;
+  font-size:9px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;
+  text-align:center;cursor:pointer;transition:background .2s;border:none}
+.s2-btn:hover{background:#e8e8e8}
+
+/* META TABLE */
+.meta{padding:28px 48px;background:var(--off);border-top:2px solid var(--border)}
+.meta-g{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border)}
+.mc{background:var(--w);padding:16px 18px}
+.mc .l{font-size:7px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--mid);margin-bottom:4px}
+.mc .v{font-size:11px;color:var(--k);line-height:1.6;font-weight:300}
+.mc .v strong{font-weight:700}
+
+@media(max-width:700px){
+  .ph,.sec,.meta{padding-left:20px;padding-right:20px}
+  .grid{grid-template-columns:1fr 1fr}
+  .s-row{max-width:100%}
+  .meta-g{grid-template-columns:1fr 1fr}
+  .c2 img.prod,.c3 img.prod{width:100%;height:55%;object-position:top}
+  .c2 .grad,.c3 .grad{background:linear-gradient(to top,rgba(0,0,0,.92) 0%,transparent 55%)}
+  .c2-panel,.c3-panel{position:absolute;bottom:0;left:0;right:0;width:100%;height:auto;
+    justify-content:flex-end;padding:12px}
+}
+</style>
+</head>
+<body>
+
+<div class="ph">
+  <div class="ph-tag">Artefact A1 · Visual Portfolio · RACE: Act</div>
+  <h1>ONER ACTIVE × HYROX</h1>
+  <div class="ph-meta">
+    <div><span class="l">Type</span><span class="v">Visual Portfolio — 6 feed images + 2 Stories templates</span></div>
+    <div><span class="l">Channel</span><span class="v">Instagram @oneractive (1.4M followers)</span></div>
+    <div><span class="l">RACE</span><span class="v">Act</span></div>
+    <div><span class="l">Target</span><span class="v">Hyrox Convert — UK women 25–34</span></div>
+    <div><span class="l">POEM</span><span class="v">Owned media</span></div>
+  </div>
+</div>
+
+<div class="sec">Feed images — 1080 × 1080 px — 6 posts</div>
+
+<div class="grid">
+
+  <!-- IMAGE 01: KIT GUIDE — EffortlessLift Black leggings full frame -->
+  <div class="card c1">
+    <img class="prod" 
+      src="https://us.oneractive.com/cdn/shop/files/241204_NOOS_EFFORTLESS_LEGGINGS_BLACK_PDP_1440x1800_02_021555f4-42b3-4e22-a660-97a0fe9100db.jpg?v=1769508061"
+      alt="EffortlessLift™ Seamless Leggings Black — Oner Active">
+    <div class="grad"></div>
+    <div class="tag">01</div>
+    <div class="wm">ONER ACTIVE</div>
+    <div class="c1-copy">
+      <span class="c1-hl">RACE DAY<br>KIT GUIDE</span>
+      <span class="c1-sub">EffortlessLift™ Leggings · @jade_skillen approved</span>
+    </div>
+  </div>
+
+  <!-- IMAGE 02: JADE PORTRAIT — SoftMotion Sports Bra Black, split layout -->
+  <div class="card c2">
+    <img class="prod"
+      src="https://us.oneractive.com/cdn/shop/files/250514_NOOS_SOFTMOTION_SPORTS_BRA_BLACK_PDP_1440x1800_01.jpg?v=1752828110"
+      alt="SoftMotion™ Sports Bra Black — Oner Active">
+    <div class="grad"></div>
+    <div class="tag">02</div>
+    <div class="c2-panel">
+      <div class="c2-name">JADE<br>SKILLEN</div>
+      <div class="c2-rule"></div>
+      <div class="c2-q">"I trained for 7 World Championships. The kit matters."</div>
+      <div class="c2-hndl">@jade_skillen · 121K</div>
+      <div class="c2-stats">
+        <div><span class="sv">AG WC</span><span class="sl">World Champion</span></div>
+        <div><span class="sv">UK #1</span><span class="sl">Fastest Pro Female</span></div>
+        <div><span class="sv">E15</span><span class="sl">Elite 15</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- IMAGE 03: PRODUCT SPOTLIGHT — EffortlessLift Mid Rise Black, feature panel -->
+  <div class="card c3">
+    <img class="prod"
+      src="https://us.oneractive.com/cdn/shop/files/NOOS_EFFORTLESS_SEAMLESS_MID_RISE_LEGGINGS_BLACK_251202_PDP_1440x1800_02_70840a96-e5a5-46bc-aa66-331e94c405cb.jpg?v=1769509630"
+      alt="EffortlessLift™ Mid Rise Leggings Black — Oner Active">
+    <div class="grad"></div>
+    <div class="tag">03</div>
+    <div class="c3-slide">01/05 →</div>
+    <div class="c3-panel">
+      <div class="c3-label">Product spotlight</div>
+      <div class="c3-name">EFFORTLESSLIFT™<br>LEGGING</div>
+      <div class="c3-feats">
+        <div class="c3-feat"><span class="fn">Waistband</span><span class="fd">Non-roll compression — holds every sled push</span></div>
+        <div class="c3-feat"><span class="fn">Squat-proof</span><span class="fd">4-way stretch, opaque at race pace</span></div>
+        <div class="c3-feat"><span class="fn">Seams</span><span class="fd">Flat-locked — zero chafe under harness</span></div>
+        <div class="c3-feat"><span class="fn">Fabric</span><span class="fd">Sweat-wicking for 75-min race duration</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- IMAGE 04: UGC TEMPLATE — two leggings side by side -->
+  <div class="card c4">
+    <img class="prod"
+      src="https://us.oneractive.com/cdn/shop/files/241204_NOOS_EFFORTLESS_LEGGINGS_BLACK_PDP_1440x1800_02_021555f4-42b3-4e22-a660-97a0fe9100db.jpg?v=1769508061"
+      alt="Oner Active Hyrox Leggings">
+    <img class="prod2"
+      src="https://eu.oneractive.com/cdn/shop/files/250409_NOOS_EFFORTLESS_LEGGINGS_COAL_PDP_1440x1800_02_5a74fa7f-8d35-474a-8058-385fdb941856.jpg?v=1769511358"
+      alt="EffortlessLift™ Coal Leggings — Oner Active">
+    <div class="grad"></div>
+    <div class="c4-frame"></div>
+    <div class="tag">04</div>
+    <div class="c4-mid">
+      <div class="c4-lbl">Your race. Your story.</div>
+      <div class="c4-ph">Tag @oneractive with your race-day photo and use:</div>
+      <div class="c4-hash">#TRAINFORIT<br>RACEINIT</div>
+      <div class="c4-hnds">@oneractive · @jade_skillen · @_lucyprocter · @zoerae</div>
+    </div>
+  </div>
+
+  <!-- IMAGE 05: STATION INFOGRAPHIC — EasyLift High Neck Bra Black -->
+  <div class="card c5">
+    <img class="prod"
+      src="https://us.oneractive.com/cdn/shop/files/NOOS_EASYLIFT_HIGH_NECK_SPORTS_BRA_BLACK_250709_PDP_1440x1800_01.jpg?v=1754045166"
+      alt="EasyLift™ High Neck Sports Bra Black — Oner Active">
+    <div class="grad"></div>
+    <div class="tag">05</div>
+    <div class="c5-body">
+      <div class="c5-ttl">RACE DAY<br>STATION BY STATION</div>
+      <div class="c5-sg">
+        <div class="c5-st"><span class="sn">01</span><span class="st">SkiErg</span><span class="sk">EasyLift™ Bra — high impact</span></div>
+        <div class="c5-st"><span class="sn">02</span><span class="st">Sled Push</span><span class="sk">EffortlessLift™ — flat-locked seams</span></div>
+        <div class="c5-st"><span class="sn">03</span><span class="st">Sled Pull</span><span class="sk">Compression waistband holds</span></div>
+        <div class="c5-st"><span class="sn">04</span><span class="st">Burpee BJ</span><span class="sk">4-way stretch, full ROM</span></div>
+        <div class="c5-st"><span class="sn">05</span><span class="st">Rowing</span><span class="sk">Sweat-wicking 1000m tested</span></div>
+        <div class="c5-st"><span class="sn">06–08</span><span class="st">+3 More</span><span class="sk">Swipe for full guide →</span></div>
+      </div>
+    </div>
+    <div class="wm">ONER ACTIVE</div>
+  </div>
+
+  <!-- IMAGE 06: DROP TEASER — EnhanceLift Leggings Black -->
+  <div class="card c6">
+    <img class="prod"
+      src="https://us.oneractive.com/cdn/shop/files/ACCENTUATE_ENHANCELIFT_SEAMLESS_LEGGINGS_BLACK_250718_PDP_1440x1800_02.jpg?v=1758625545"
+      alt="EnhanceLift™ Seamless Leggings Black — Oner Active">
+    <div class="grad"></div>
+    <div class="c6-corners"><div class="tl"></div><div class="br"></div></div>
+    <div class="tag">06</div>
+    <div class="c6-mid">
+      <div class="c6-pre">Birmingham Hyrox · May 2027</div>
+      <div class="c6-num">48</div>
+      <div class="c6-unit">hours</div>
+      <div class="c6-copy">NEW KIT<br>DROPPING.</div>
+      <div class="c6-ev">Limited edition · Race-day release</div>
+    </div>
+  </div>
+
+</div>
+
+<div class="sec" style="max-width:644px">Stories templates — 1080 × 1920 px — 2 templates</div>
+
+<div class="s-row">
+
+  <!-- STORY 1: POLL — Ash Grey leggings background -->
+  <div class="s-card">
+    <img class="prod"
+      src="https://us.oneractive.com/cdn/shop/files/240830_AW24_EFFORTLESS_LEGGINGS_ASHGREY_PDP_1440x1800_02.jpg?v=1769508482"
+      alt="EffortlessLift™ Ash Grey Leggings — Oner Active">
+    <div class="s1-fade"></div>
+    <div class="s-prog"><div class="sp-f"></div><div class="sp-e"></div><div class="sp-e"></div></div>
+    <div class="s-hdr"><div class="s-av">OA</div><div class="s-acc">@oneractive</div><div class="s-time">now</div></div>
+    <div class="s1-body">
+      <div class="s1-q">HOW MANY HYROX RACES HAVE YOU DONE?</div>
+      <div class="s1-opts">
+        <div class="s1-opt active" onclick="pp(this)">🔥 None — signing up now</div>
+        <div class="s1-opt" onclick="pp(this)">1–2 races</div>
+        <div class="s1-opt" onclick="pp(this)">3–5 races</div>
+        <div class="s1-opt" onclick="pp(this)">6+ I'm obsessed</div>
+      </div>
+    </div>
+    <div class="s1-foot">#TrainForItRaceInIt · @oneractive</div>
+  </div>
+
+  <!-- STORY 2: COUNTDOWN — UnifiedMove Twist Bra background -->
+  <div class="s-card">
+    <img class="prod"
+      src="https://us.oneractive.com/cdn/shop/files/250205_RESHOOT_UNIFIED_TWIST_SPORTS_BRA_BLACK_PDP_1440x1800_01.jpg?v=1740415099"
+      alt="UnifiedMove Twist Sports Bra Black — Oner Active">
+    <div class="s2-fade"></div>
+    <div class="s-prog"><div class="sp-f"></div><div class="sp-e"></div><div class="sp-e"></div></div>
+    <div class="s-hdr"><div class="s-av">OA</div><div class="s-acc">@oneractive</div><div class="s-time">now</div></div>
+    <div class="s2-body">
+      <div class="s2-ico">🏁</div>
+      <div class="s2-lbl">Race day countdown</div>
+      <div class="s2-time">07:23</div>
+      <div class="s2-unit">Hours remaining</div>
+      <div class="s2-ev">Racing at:<span>HYROX BIRMINGHAM</span></div>
+      <div class="s2-hash">#TRAINFORIT · RACEINIT</div>
+    </div>
+    <button class="s2-btn">Share your race time →</button>
+  </div>
+
+</div>
+
+<div class="meta">
+  <div class="meta-g">
+    <div class="mc"><div class="l">RACE stage</div><div class="v"><strong>Act</strong> — saves, carousel swipes and bio link clicks moving warm audiences toward the landing page</div></div>
+    <div class="mc"><div class="l">POEM</div><div class="v"><strong>Owned media</strong> — @oneractive (1.4M). Jade Skillen tag cross-promotes to her <strong>121K</strong> aligned Hyrox audience.</div></div>
+    <div class="mc"><div class="l">Target</div><div class="v"><strong>Hyrox Convert</strong> — UK women 25–34, 1–2 races completed, high Instagram engagement, actively considering kit purchase</div></div>
+    <div class="mc"><div class="l">Clothing shown</div><div class="v">EffortlessLift™ Leggings Black, SoftMotion™ Bra Black, Mid Rise Leggings Black, Coal Leggings, EasyLift™ Bra, EnhanceLift™ Leggings, Ash Grey Leggings, UnifiedMove Twist Bra — all from oneractive.com</div></div>
+    <div class="mc"><div class="l">Branding</div><div class="v">Oner Active <strong>black & white</strong> palette. Bebas Neue typography. Real product images from oneractive.com as primary visual content.</div></div>
+    <div class="mc"><div class="l">Objective link</div><div class="v">Images 3 & 5 optimised for <strong>saves</strong> → 2% follower growth KPI. Image 4 UGC template seeds <strong>300-post Earned media KPI</strong>.</div></div>
+  </div>
+</div>
+
+<script>function pp(el){el.closest('.s1-opts').querySelectorAll('.s1-opt').forEach(o=>o.classList.remove('active'));el.classList.add('active')}</script>
+</body>
+</html>

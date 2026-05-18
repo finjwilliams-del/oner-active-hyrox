@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Women's Hyrox Kit UK | Race-ready in 12 weeks | Oner Active</title>
+<meta name="description" content="Train for your best Hyrox race in Oner Active performance kit. Download your free 12-week training plan by Jade Skillen. Women's Hyrox kit UK.">
+
+<!-- EmailJS SDK -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--k:#111;--w:#FAFAFA;--mid:#888;--border:#DDD;--off:#F4F4F4}
+html{scroll-behavior:smooth}
+body{background:var(--w);font-family:'Montserrat',sans-serif;color:var(--k);font-size:15px;line-height:1.7}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:100;background:rgba(250,250,250,.96);
+  backdrop-filter:blur(10px);border-bottom:2px solid var(--k);
+  padding:0 48px;height:50px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:.1em;color:var(--k);text-decoration:none}
+.nav-links{display:flex;gap:24px;list-style:none}
+.nav-links a{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--mid);text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:var(--k)}
+.nav-cta{background:var(--k) !important;color:#fff !important;padding:7px 16px !important}
+
+/* HERO */
+.hero{background:var(--k);min-height:88vh;display:grid;grid-template-columns:1fr 1fr;position:relative;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:repeating-linear-gradient(90deg,rgba(255,255,255,.02) 0,rgba(255,255,255,.02) 1px,transparent 1px,transparent 80px)}
+.hero-l{padding:72px 52px 100px 56px;position:relative;z-index:2;display:flex;flex-direction:column;justify-content:center}
+.hero-ey{font-size:9px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:18px;display:flex;align-items:center;gap:10px}
+.hero-ey::before{content:'';width:16px;height:1.5px;background:rgba(255,255,255,.4)}
+.hero-h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(48px,7vw,88px);letter-spacing:.01em;line-height:.88;color:#fff;margin-bottom:24px}
+.hero-h1 em{font-style:italic;opacity:.5}
+.hero-body{font-size:14px;color:rgba(255,255,255,.5);line-height:1.75;max-width:380px;margin-bottom:32px;font-weight:300}
+.hero-cta-row{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.btn-p{display:inline-block;background:#fff;color:#000;text-decoration:none;font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;padding:14px 28px;border:none;cursor:pointer;transition:all .2s}
+.btn-p:hover{background:#e8e8e8;transform:translateY(-1px)}
+.btn-s{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.45);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.2);padding-bottom:2px;transition:all .2s}
+.btn-s:hover{color:#fff;border-color:#fff}
+.hero-r{position:relative;display:flex;align-items:center;justify-content:center;padding:56px 40px;z-index:2}
+.hero-phone{width:100%;max-width:260px;aspect-ratio:9/16;position:relative;overflow:hidden;box-shadow:0 32px 80px rgba(0,0,0,.8)}
+.hero-phone img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.55)}
+.hp-fade{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.9) 0%,rgba(0,0,0,.1) 50%,transparent 100%)}
+.hp-data{position:absolute;bottom:24px;left:20px;right:20px}
+.hp-rec{font-size:8px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:4px}
+.hp-time{font-family:'Bebas Neue',sans-serif;font-size:44px;letter-spacing:-.02em;line-height:1;color:#fff;margin-bottom:2px}
+.hp-athlete{font-size:10px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.45)}
+.hp-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:48px;height:48px;border-radius:50%;background:rgba(255,255,255,.15);border:1.5px solid rgba(255,255,255,.3);display:flex;align-items:center;justify-content:center;font-size:16px;cursor:pointer}
+.hero-stats{position:absolute;bottom:0;left:0;right:0;background:rgba(255,255,255,.04);border-top:1px solid rgba(255,255,255,.07);padding:12px 56px;display:flex;gap:32px;z-index:3;flex-wrap:wrap}
+.hs{display:flex;align-items:center;gap:10px}
+.hs-v{font-family:'Bebas Neue',sans-serif;font-size:22px;color:#fff;line-height:1}
+.hs-l{font-size:9px;color:rgba(255,255,255,.35);line-height:1.4;font-weight:300}
+
+/* ── EMAIL GATE ─────────────────────────────────────────────────────────────── */
+.gate{background:var(--k);display:grid;grid-template-columns:1fr 1fr}
+.gate-l{padding:64px 52px 64px 56px;background:#111}
+.gate-ey{font-size:8px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:12px}
+.gate-h{font-family:'Bebas Neue',sans-serif;font-size:clamp(28px,5vw,56px);line-height:.88;letter-spacing:.01em;color:#fff;margin-bottom:16px}
+.gate-h em{font-style:italic;opacity:.5}
+.gate-body{font-size:13px;color:rgba(255,255,255,.45);line-height:1.8;font-weight:300;margin-bottom:24px;max-width:360px}
+.author-row{display:flex;align-items:center;gap:12px;padding:12px 14px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08)}
+.av{width:38px;height:38px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:#000;flex-shrink:0}
+.av-name{font-size:12px;font-weight:700;letter-spacing:.04em;color:#fff}
+.av-title{font-size:10px;color:rgba(255,255,255,.35);font-weight:300}
+.gate-r{padding:64px 56px 64px 52px;background:#181818;display:flex;flex-direction:column;justify-content:center}
+.form-card{background:#222;border:1px solid rgba(255,255,255,.08);padding:28px 24px}
+.fc-ttl{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:.06em;color:#fff;margin-bottom:3px}
+.fc-sub{font-size:11px;color:rgba(255,255,255,.3);margin-bottom:20px;font-weight:300}
+.fg{margin-bottom:12px}
+.fg label{display:block;font-size:8px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:4px}
+.fg input,.fg select{width:100%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);padding:10px 12px;font-family:'Montserrat',sans-serif;font-size:13px;color:#fff;outline:none;transition:border-color .2s;-webkit-appearance:none}
+.fg input::placeholder{color:rgba(255,255,255,.18)}
+.fg input:focus,.fg select:focus{border-color:#fff}
+.fg select option{background:#222;color:#fff}
+
+/* Submit button states */
+.fsub{width:100%;background:#fff;color:#000;border:none;padding:13px 20px;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;cursor:pointer;margin-top:6px;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:8px}
+.fsub:hover:not(:disabled){background:#e8e8e8}
+.fsub:disabled{opacity:.65;cursor:not-allowed}
+.fsub .spinner{width:16px;height:16px;border:2px solid #000;border-top-color:transparent;border-radius:50%;animation:spin .6s linear infinite;display:none}
+.fsub.loading .btn-text{display:none}
+.fsub.loading .spinner{display:block}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+.fnote{font-size:9px;color:rgba(255,255,255,.2);text-align:center;margin-top:8px;line-height:1.6}
+
+/* Error / success states */
+.field-error{font-size:10px;color:#ff6b6b;margin-top:3px;display:none}
+.form-error{background:rgba(255,100,100,.1);border:1px solid rgba(255,100,100,.3);padding:10px 14px;margin-top:10px;font-size:11px;color:#ff8888;display:none}
+.succ{display:none;text-align:center;padding:16px}
+.succ-ico{font-size:36px;margin-bottom:12px}
+.succ-ttl{font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:.04em;color:#fff;margin-bottom:6px}
+.succ-body{font-size:12px;color:rgba(255,255,255,.5);line-height:1.7}
+.succ-email{font-weight:700;color:#fff}
+.succ-btn{display:inline-block;margin-top:16px;background:#fff;color:#000;padding:10px 20px;font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;border:none;text-decoration:none;transition:background .2s}
+.succ-btn:hover{background:#e8e8e8}
+
+/* ── 12-WEEK PROGRAMME SECTION ───────────────────────────────────────────────── */
+.programme-section{background:var(--w);padding:72px 56px}
+.prog-header{display:flex;align-items:flex-start;justify-content:space-between;gap:24px;margin-bottom:48px;flex-wrap:wrap}
+.prog-title-block .sec-ey{font-size:8px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--mid);margin-bottom:10px;display:flex;align-items:center;gap:10px}
+.prog-title-block .sec-ey::before{content:'';width:14px;height:1.5px;background:var(--k)}
+.prog-title-block h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(28px,5vw,52px);line-height:.88;letter-spacing:.01em;margin-bottom:8px}
+.prog-title-block p{font-size:13px;color:var(--mid);font-weight:300;max-width:440px}
+.prog-actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.prog-btn{background:var(--k);color:#fff;border:none;padding:11px 22px;font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;transition:background .2s;text-decoration:none;display:inline-block}
+.prog-btn:hover{background:#333}
+.prog-btn.outline{background:transparent;color:var(--k);border:2px solid var(--k)}
+.prog-btn.outline:hover{background:var(--k);color:#fff}
+
+/* Phase tabs */
+.phase-tabs{display:flex;gap:0;border-bottom:2px solid var(--border);margin-bottom:32px;overflow-x:auto}
+.phase-tab{padding:12px 20px;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--mid);cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-2px;white-space:nowrap;transition:all .2s}
+.phase-tab.active{color:var(--k);border-bottom-color:var(--k)}
+.phase-tab:hover:not(.active){color:var(--k)}
+
+/* Phase content */
+.phase-content{display:none}
+.phase-content.active{display:block}
+
+/* Phase intro */
+.phase-intro{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:32px}
+.pi-card{background:var(--off);padding:20px;border-top:3px solid var(--k)}
+.pi-card .pi-label{font-size:8px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--mid);margin-bottom:6px}
+.pi-card .pi-val{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:.02em;color:var(--k);line-height:1;margin-bottom:3px}
+.pi-card .pi-desc{font-size:11px;color:var(--mid);font-weight:300;line-height:1.5}
+
+/* Week cards */
+.weeks-grid{display:flex;flex-direction:column;gap:8px}
+.week-card{border:1px solid var(--border);background:var(--w);overflow:hidden}
+.week-header{display:grid;grid-template-columns:80px 1fr auto;align-items:center;padding:14px 18px;cursor:pointer;gap:12px;transition:background .2s}
+.week-header:hover{background:var(--off)}
+.week-header.open{background:var(--off)}
+.wh-num{font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:.02em;color:var(--k);line-height:1}
+.wh-title{font-size:13px;font-weight:700;color:var(--k);display:block;margin-bottom:2px}
+.wh-focus{font-size:11px;color:var(--mid);font-weight:300}
+.wh-toggle{font-size:20px;color:var(--mid);transition:transform .25s;flex-shrink:0}
+.week-header.open .wh-toggle{transform:rotate(45deg)}
+.week-body{display:none;border-top:1px solid var(--border);background:var(--off)}
+.week-body.open{display:block}
+
+/* Day grid inside week */
+.day-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:1px;background:var(--border)}
+.day-card{background:var(--w);padding:14px 10px}
+.day-label{font-size:8px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--mid);margin-bottom:6px}
+.day-name{font-size:11px;font-weight:700;color:var(--k);margin-bottom:4px}
+.day-desc{font-size:10px;color:var(--mid);line-height:1.5}
+.day-card.rest{background:var(--off)}
+.day-card.rest .day-name{color:var(--mid)}
+.day-card.key-session{border-top:3px solid var(--k)}
+.day-metrics{display:flex;flex-wrap:wrap;gap:4px;margin-top:6px}
+.day-metric{font-size:9px;background:var(--k);color:#fff;padding:2px 6px;font-weight:600}
+.day-metric.gray{background:var(--border);color:var(--k)}
+
+/* Station key */
+.station-key{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:24px 0;padding:20px;background:var(--off);border:1px solid var(--border)}
+.sk-title{grid-column:1/-1;font-size:9px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--mid);margin-bottom:8px}
+.sk-item{font-size:10px;color:var(--k);font-weight:500}
+.sk-item span{font-weight:300;color:var(--mid)}
+
+/* KIT */
+.kit-head{padding:56px 56px 24px;background:var(--off)}
+.sec-ey{font-size:8px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--mid);margin-bottom:10px;display:flex;align-items:center;gap:10px}
+.sec-ey::before{content:'';width:14px;height:1.5px;background:var(--k)}
+.sec-h{font-family:'Bebas Neue',sans-serif;font-size:clamp(28px,5vw,52px);line-height:.88;letter-spacing:.01em;margin-bottom:6px}
+.sec-b{font-size:13px;color:var(--mid);line-height:1.75;font-weight:300;max-width:440px}
+.kit-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border)}
+.kc{background:var(--w);cursor:pointer;overflow:hidden;transition:transform .2s;border-top:3px solid transparent}
+.kc:hover{transform:translateY(-3px);border-top-color:var(--k)}
+.kc-img{position:relative;overflow:hidden;background:var(--off)}
+.kc-img img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:top center;display:block;transition:transform .4s}
+.kc:hover .kc-img img{transform:scale(1.04)}
+.kc-badge{position:absolute;top:10px;left:10px;font-size:8px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:3px 8px;z-index:2;background:var(--k);color:#fff}
+.kc-info{padding:14px}
+.kc-name{font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--k);margin-bottom:4px}
+.kc-note{font-size:10px;color:var(--mid);font-style:italic;line-height:1.5;margin-bottom:8px;border-left:2px solid var(--k);padding-left:7px}
+.kc-price{font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:.04em;color:var(--k)}
+.kc-btn{display:block;width:100%;background:var(--k);color:#fff;border:none;padding:9px;font-size:9px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;margin-top:8px;transition:background .2s}
+.kc-btn:hover{background:#333}
+
+/* Testimonials */
+.testi{background:var(--k);padding:64px 56px}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.08);margin-top:36px}
+.tc{padding:28px 24px;background:var(--k)}
+.tc-q{font-size:15px;font-style:italic;color:#fff;line-height:1.7;margin-bottom:20px;font-weight:300}
+.tc-q::before{content:'\201C';font-family:'Bebas Neue',sans-serif;font-size:40px;color:rgba(255,255,255,.18);display:block;line-height:1;margin-bottom:5px}
+.tc-who{display:flex;align-items:center;gap:10px}
+.tc-av{width:38px;height:38px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:#000;flex-shrink:0}
+.tc-name{font-size:12px;font-weight:800;letter-spacing:.04em;color:#fff;text-transform:uppercase}
+.tc-handle{font-size:9px;color:rgba(255,255,255,.35);margin-top:1px}
+
+/* FAQ */
+.faq-sec{padding:64px 56px;max-width:1300px;margin:0 auto}
+.faq-list{max-width:680px}
+.faq-item{border-bottom:1px solid var(--border);padding:16px 0;cursor:pointer}
+.faq-q{font-size:14px;font-weight:700;color:var(--k);display:flex;justify-content:space-between;align-items:center;gap:16px;user-select:none}
+.faq-ico{font-size:18px;flex-shrink:0;transition:transform .2s}
+.faq-a{font-size:13px;color:var(--mid);line-height:1.75;font-weight:300;max-height:0;overflow:hidden;transition:max-height .3s,padding .3s}
+.faq-item.open .faq-a{max-height:180px;padding-top:8px}
+.faq-item.open .faq-ico{transform:rotate(45deg)}
+
+footer{background:var(--k);padding:24px 56px;display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(255,255,255,.06)}
+.fl-logo{font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:.1em;color:#fff}
+.fl-note{font-size:10px;color:rgba(255,255,255,.2);font-weight:300}
+.fl-badge{font-size:8px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.08);padding:3px 9px}
+
+/* Print / PDF styles for programme download */
+@media print{
+  nav,footer,.gate,.hero,.kit-grid,.testi,.faq-sec,.prog-actions,.phase-tabs,
+  .kc-btn,.programme-section .sec-ey,body>*:not(.programme-section){display:none!important}
+  .programme-section{padding:0!important}
+  .phase-content{display:block!important}
+  .week-body{display:block!important}
+  .day-grid{grid-template-columns:repeat(4,1fr)!important}
+  .phase-intro{grid-template-columns:repeat(3,1fr)!important}
+}
+
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr}.hero-r{display:none}.hero-l{padding:52px 24px 80px}
+  .hero-stats{padding:12px 24px;gap:18px}
+  .gate{grid-template-columns:1fr}.gate-l,.gate-r{padding:36px 24px}
+  .programme-section,.kit-head,.testi,.faq-sec{padding:48px 24px}
+  .kit-grid{grid-template-columns:1fr 1fr}
+  .testi-grid{grid-template-columns:1fr}
+  .day-grid{grid-template-columns:repeat(4,1fr)!important}
+  .phase-intro{grid-template-columns:1fr!important}
+  nav{padding:0 20px}.nav-links{display:none}
+  footer{padding:20px 24px;flex-direction:column;gap:10px;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="#">ONER ACTIVE</a>
+  <ul class="nav-links">
+    <li><a href="#programme">12-Week Plan</a></li>
+    <li><a href="#kit">Hyrox Kit</a></li>
+    <li><a href="#ambassadors">Ambassadors</a></li>
+    <li><a href="#gate" class="nav-cta">Get Free Plan ↓</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-l">
+    <div class="hero-ey">Women's Hyrox Kit UK · Race-ready in 12 weeks</div>
+    <h1 class="hero-h1">TRAIN<br>FOR IT.<br><em>RACE IN IT.</em></h1>
+    <p class="hero-body">Performance kit built for what Hyrox actually demands — plus Jade Skillen's complete 12-week training plan, free, sent straight to your inbox.</p>
+    <div class="hero-cta-row">
+      <a href="#gate" class="btn-p">Get the free 12-week plan</a>
+      <a href="#programme" class="btn-s">View plan preview ↓</a>
+    </div>
+  </div>
+  <div class="hero-r">
+    <div class="hero-phone">
+      <img src="https://us.oneractive.com/cdn/shop/files/NOOS_EFFORTLESS_SEAMLESS_MID_RISE_LEGGINGS_BLACK_251202_PDP_1440x1800_02_70840a96-e5a5-46bc-aa66-331e94c405cb.jpg?v=1769509630" alt="Oner Active Hyrox Kit">
+      <div class="hp-fade"></div>
+      <div class="hp-data">
+        <div class="hp-rec">Glasgow Open World Record</div>
+        <div class="hp-time">57:35</div>
+        <div class="hp-athlete">Lucy Procter · @_lucyprocter</div>
+      </div>
+      <div class="hp-play">▶</div>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div class="hs"><div class="hs-v">12</div><div class="hs-l">Weeks of<br>structured training</div></div>
+    <div class="hs"><div class="hs-v">57:35</div><div class="hs-l">Glasgow World Record<br>Lucy Procter, 2025</div></div>
+    <div class="hs"><div class="hs-v">8</div><div class="hs-l">Hyrox stations<br>covered in the plan</div></div>
+    <div class="hs"><div class="hs-v">1.4M</div><div class="hs-l">@oneractive<br>community</div></div>
+  </div>
+</section>
+
+<!-- EMAIL GATE -->
+<section class="gate" id="gate">
+  <div class="gate-l">
+    <div class="gate-ey">Free download · Sent to your inbox instantly</div>
+    <h2 class="gate-h">YOUR 12-WEEK<br><em>RACE-READY</em><br>PROGRAMME.</h2>
+    <p class="gate-body">Written by Jade Skillen — AG World Champion and the UK's fastest female Hyrox athlete. Station-specific training, running programming and race-day strategy. Enter your details and we'll email you the full plan immediately.</p>
+    <div class="author-row">
+      <div class="av">JS</div>
+      <div>
+        <div class="av-name">Jade Skillen</div>
+        <div class="av-title">Hyrox AG World Champion · @jade_skillen · 121K Instagram · Fastest UK Pro Female</div>
+      </div>
+    </div>
+  </div>
+  <div class="gate-r">
+    <div class="form-card">
+      <div id="formWrap">
+        <div class="fc-ttl">GET YOUR FREE PLAN</div>
+        <div class="fc-sub">We'll email it to you instantly. Unsubscribe any time.</div>
+
+        <div class="fg">
+          <label>First name</label>
+          <input type="text" id="fname" placeholder="Your first name">
+          <div class="field-error" id="err-fname">Please enter your first name</div>
+        </div>
+        <div class="fg">
+          <label>Email address</label>
+          <input type="email" id="femail" placeholder="your@email.com">
+          <div class="field-error" id="err-email">Please enter a valid email address</div>
+        </div>
+        <div class="fg">
+          <label>My race goal</label>
+          <select id="fgoal">
+            <option value="">Select your goal</option>
+            <option value="First Hyrox — just finish">First Hyrox race — just finish</option>
+            <option value="Sub-60 minutes">Sub-60 minutes</option>
+            <option value="Sub-55 minutes">Sub-55 minutes</option>
+            <option value="Elite 15 qualification">Elite 15 qualification</option>
+          </select>
+        </div>
+
+        <button class="fsub" id="submitBtn" onclick="handleSubmit()">
+          <span class="btn-text">Send me Jade's 12-week plan →</span>
+          <div class="spinner"></div>
+        </button>
+
+        <div class="form-error" id="formError">
+          Something went wrong. We've opened your email app instead — just hit send!
+        </div>
+
+        <p class="fnote">By signing up you join the Oner Active community. We'll send you training content, early product access and race tips. Unsubscribe at any time.</p>
+      </div>
+
+      <div class="succ" id="succState">
+        <div class="succ-ico">✅</div>
+        <div class="succ-ttl">PLAN ON ITS WAY!</div>
+        <div class="succ-body">
+          We've sent Jade's complete 12-week Hyrox programme to<br>
+          <span class="succ-email" id="succEmail"></span><br><br>
+          Check your inbox (and spam folder just in case).<br>
+          Welcome to the Oner Hyrox Club.
+        </div>
+        <a href="#programme" class="succ-btn">Preview the plan below ↓</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════════════════════ -->
+<!-- 12-WEEK TRAINING PROGRAMME -->
+<!-- ══════════════════════════════════════════════════════════════════════════ -->
+<section class="programme-section" id="programme">
+  <div class="prog-header">
+    <div class="prog-title-block">
+      <div class="sec-ey">Jade Skillen's 12-week Hyrox programme</div>
+      <h2 class="sec-h">RACE-READY IN<br>12 WEEKS.</h2>
+      <p>Three phases. Four weekly sessions. Station-specific Hyrox training, strength work and running — scaled to your goal. Adapt the weights to your current level.</p>
+    </div>
+    <div class="prog-actions">
+      <button class="prog-btn" onclick="downloadPlan()">⬇ Download PDF</button>
+      <button class="prog-btn outline" onclick="window.print()">🖨 Print plan</button>
+    </div>
+  </div>
+
+  <!-- Station key -->
+  <div class="station-key">
+    <div class="sk-title">Hyrox station key</div>
+    <div class="sk-item">SE = SkiErg <span>1000m</span></div>
+    <div class="sk-item">SP = Sled Push <span>25m</span></div>
+    <div class="sk-item">SL = Sled Pull <span>25m</span></div>
+    <div class="sk-item">BJ = Burpee Broad Jump <span>50m</span></div>
+    <div class="sk-item">ROW = Rowing <span>1000m</span></div>
+    <div class="sk-item">WB = Wall Balls <span>75/100 reps</span></div>
+    <div class="sk-item">FC = Farmers Carry <span>200m</span></div>
+    <div class="sk-item">SAN = Sandbag Lunges <span>100m</span></div>
+  </div>
+
+  <!-- Phase tabs -->
+  <div class="phase-tabs">
+    <div class="phase-tab active" onclick="switchPhase(0)">Phase 1 — Build (Weeks 1–4)</div>
+    <div class="phase-tab" onclick="switchPhase(1)">Phase 2 — Develop (Weeks 5–8)</div>
+    <div class="phase-tab" onclick="switchPhase(2)">Phase 3 — Peak (Weeks 9–12)</div>
+  </div>
+
+  <!-- ── PHASE 1: BUILD ─────────────────────────────────────────────────── -->
+  <div class="phase-content active" id="phase0">
+    <div class="phase-intro">
+      <div class="pi-card"><div class="pi-label">Phase focus</div><div class="pi-val">Build</div><div class="pi-desc">Aerobic base, station technique, movement patterns. Lighter loads, longer rest periods.</div></div>
+      <div class="pi-card"><div class="pi-label">Sessions per week</div><div class="pi-val">4</div><div class="pi-desc">2 × Hyrox-specific · 1 × Strength · 1 × Endurance run</div></div>
+      <div class="pi-card"><div class="pi-label">Perceived effort</div><div class="pi-val">RPE 6–7</div><div class="pi-desc">Conversational pace. Focus on form over intensity throughout this phase.</div></div>
+    </div>
+    <div class="weeks-grid" id="weeks-p0"></div>
+  </div>
+
+  <!-- ── PHASE 2: DEVELOP ───────────────────────────────────────────────── -->
+  <div class="phase-content" id="phase1">
+    <div class="phase-intro">
+      <div class="pi-card"><div class="pi-label">Phase focus</div><div class="pi-val">Develop</div><div class="pi-desc">Station combos, race-pace intervals, progressive overload. Building race-specific fitness.</div></div>
+      <div class="pi-card"><div class="pi-label">Sessions per week</div><div class="pi-val">4</div><div class="pi-desc">2 × Hyrox-specific · 1 × Strength · 1 × Tempo run</div></div>
+      <div class="pi-card"><div class="pi-label">Perceived effort</div><div class="pi-val">RPE 7–8</div><div class="pi-desc">Comfortably hard. You should be breathing heavily but maintaining form.</div></div>
+    </div>
+    <div class="weeks-grid" id="weeks-p1"></div>
+  </div>
+
+  <!-- ── PHASE 3: PEAK ──────────────────────────────────────────────────── -->
+  <div class="phase-content" id="phase2">
+    <div class="phase-intro">
+      <div class="pi-card"><div class="pi-label">Phase focus</div><div class="pi-val">Peak & Taper</div><div class="pi-desc">Race-simulation, high intensity, then controlled taper into race week.</div></div>
+      <div class="pi-card"><div class="pi-label">Sessions per week</div><div class="pi-val">4 → 3</div><div class="pi-desc">2 × Hyrox-specific · 1 × Strength · 1 × Race-pace run. Week 12: taper.</div></div>
+      <div class="pi-card"><div class="pi-label">Perceived effort</div><div class="pi-val">RPE 8–9</div><div class="pi-desc">Race-pace intensity in weeks 9–11. Week 12 drops to RPE 5–6 — trust the taper.</div></div>
+    </div>
+    <div class="weeks-grid" id="weeks-p2"></div>
+  </div>
+</section>
+
+<!-- KIT EDIT -->
+<section id="kit">
+  <div class="kit-head">
+    <div class="sec-ey">Hyrox kit edit</div>
+    <h2 class="sec-h">BUILT FOR RACE DAY.<br>WORN BY WORLD CHAMPIONS.</h2>
+    <p class="sec-b">Four pieces. Ambassador-tested. Engineered for 75-minute race duration.</p>
+  </div>
+  <div class="kit-grid">
+    <div class="kc">
+      <div class="kc-img"><div class="kc-badge">Jade's pick</div><img src="https://us.oneractive.com/cdn/shop/files/241204_NOOS_EFFORTLESS_LEGGINGS_BLACK_PDP_1440x1800_02_021555f4-42b3-4e22-a660-97a0fe9100db.jpg?v=1769508061" alt="EffortlessLift Leggings Black"></div>
+      <div class="kc-info"><div class="kc-name">EffortlessLift™ Legging</div><div class="kc-note">"The leggings I wore for every station at World Championships. Zero chafe, zero give." — Jade</div><div class="kc-price">£54</div><button class="kc-btn" onclick="addBag(this)">Add to bag</button></div>
+    </div>
+    <div class="kc">
+      <div class="kc-img"><div class="kc-badge">Race essential</div><img src="https://us.oneractive.com/cdn/shop/files/NOOS_EASYLIFT_HIGH_NECK_SPORTS_BRA_BLACK_250709_PDP_1440x1800_01.jpg?v=1754045166" alt="EasyLift High Neck Bra"></div>
+      <div class="kc-info"><div class="kc-name">EasyLift™ High Neck Bra</div><div class="kc-note">"High-impact support through the ski erg — high neck, no adjustments mid-race."</div><div class="kc-price">£42</div><button class="kc-btn" onclick="addBag(this)">Add to bag</button></div>
+    </div>
+    <div class="kc">
+      <div class="kc-img"><div class="kc-badge">Lucy's race kit</div><img src="https://us.oneractive.com/cdn/shop/files/NOOS_EFFORTLESS_SEAMLESS_MID_RISE_LEGGINGS_BLACK_251202_PDP_1440x1800_02_70840a96-e5a5-46bc-aa66-331e94c405cb.jpg?v=1769509630" alt="EffortlessLift Mid Rise"></div>
+      <div class="kc-info"><div class="kc-name">EffortlessLift™ Mid Rise</div><div class="kc-note">"Worn by Lucy Procter at the Glasgow Major — the World Record race kit."</div><div class="kc-price">£54</div><button class="kc-btn" onclick="addBag(this)">Add to bag</button></div>
+    </div>
+    <div class="kc">
+      <div class="kc-img"><div class="kc-badge">New</div><img src="https://us.oneractive.com/cdn/shop/files/ACCENTUATE_ENHANCELIFT_SEAMLESS_LEGGINGS_BLACK_250718_PDP_1440x1800_02.jpg?v=1758625545" alt="EnhanceLift Leggings"></div>
+      <div class="kc-info"><div class="kc-name">EnhanceLift™ Legging</div><div class="kc-note">"Full range of motion at hip flexors — no drag on the sled pull."</div><div class="kc-price">£60</div><button class="kc-btn" onclick="addBag(this)">Add to bag</button></div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testi" id="ambassadors">
+  <div class="sec-ey" style="color:rgba(255,255,255,.35)">Ambassador testimonials</div>
+  <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(28px,5vw,52px);line-height:.88;letter-spacing:.01em;color:#fff;margin-top:8px">WORN BY THE<br>BEST IN THE UK.</h2>
+  <div class="testi-grid">
+    <div class="tc"><div class="tc-q">Built for what Hyrox actually demands of your kit — not just the Instagram.</div><div class="tc-who"><div class="tc-av">JS</div><div><div class="tc-name">Jade Skillen</div><div class="tc-handle">@jade_skillen · 121K · AG World Champion</div></div></div></div>
+    <div class="tc"><div class="tc-q">I wore Oner for the Glasgow record. 57:35.</div><div class="tc-who"><div class="tc-av">LP</div><div><div class="tc-name">Lucy Procter</div><div class="tc-handle">@_lucyprocter · 30K · Glasgow World Record</div></div></div></div>
+    <div class="tc"><div class="tc-q">My race day go-to for two years. It's the only kit I race in.</div><div class="tc-who"><div class="tc-av">ZR</div><div><div class="tc-name">Zoe Ellen Rae</div><div class="tc-handle">@zoerae · 696K · Hyrox Pro</div></div></div></div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-sec">
+  <div class="sec-ey">FAQ</div>
+  <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(28px,5vw,52px);line-height:.88;letter-spacing:.01em;margin-bottom:28px">KIT QUESTIONS ANSWERED.</h2>
+  <div class="faq-list">
+    <div class="faq-item open"><div class="faq-q" onclick="faq(this)">Will the leggings survive a sled push? <span class="faq-ico">+</span></div><div class="faq-a">Yes. The EffortlessLift™ uses flat-locked seams specifically to prevent chafe under harness straps. Jade Skillen has tested every Hyrox station across multiple World Championship events in this exact kit.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="faq(this)">What size should I order for Hyrox? <span class="faq-ico">+</span></div><div class="faq-a">Our size guide is based on hip measurement. If between sizes, size up for burpee broad jumps and deep sled pulls — you want full range of motion. Ambassadors compete in true-to-size.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="faq(this)">How do I get the 12-week training plan? <span class="faq-ico">+</span></div><div class="faq-a">Enter your email above and we'll send it to your inbox immediately. You can also preview the full plan on this page below the kit section. It's completely free — no catch.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="faq(this)">Is the plan suitable for beginners? <span class="faq-ico">+</span></div><div class="faq-a">The plan is written for three goals: first-timers (just finish), competitive amateurs (sub-60 minutes) and elite development (sub-55 / Elite 15). Select your goal when you sign up and scale the weights accordingly.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="faq(this)">What is the returns policy? <span class="faq-ico">+</span></div><div class="faq-a">30-day returns on unworn items. If the fit isn't right before race day, contact our team and we'll prioritise an exchange.</div></div>
+  </div>
+</section>
+
+<footer>
+  <div class="fl-logo">ONER ACTIVE</div>
+  <div class="fl-badge">Artefact A3 · RACE: Convert + Engage</div>
+  <div class="fl-note">© 2027 Oner Active · #TrainForItRaceInIt</div>
+</footer>
+
+<!-- ══════════════════════════════════════════════════════════════════════════ -->
+<!-- JAVASCRIPT -->
+<!-- ══════════════════════════════════════════════════════════════════════════ -->
+<script>
+// ── EMAILJS INITIALISATION ────────────────────────────────────────────────────
+// To make real emails work:
+// 1. Go to https://www.emailjs.com and create a FREE account
+// 2. Add an Email Service (Gmail, Outlook, etc.)
+// 3. Create an Email Template with variables: {{to_email}}, {{to_name}}, {{goal}}, {{plan_url}}
+// 4. Replace the three values below with your actual IDs
+const EMAILJS_PUBLIC_KEY  = "YOUR_PUBLIC_KEY";   // e.g. "user_abc123"
+const EMAILJS_SERVICE_ID  = "YOUR_SERVICE_ID";   // e.g. "service_gmail"
+const EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID";  // e.g. "template_hyrox"
+
+let emailjsReady = false;
+try {
+  emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+  emailjsReady = (EMAILJS_PUBLIC_KEY !== "YOUR_PUBLIC_KEY");
+} catch(e) {}
+
+// ── FORM VALIDATION & SUBMIT ──────────────────────────────────────────────────
+async function handleSubmit() {
+  const name   = document.getElementById('fname').value.trim();
+  const email  = document.getElementById('femail').value.trim();
+  const goal   = document.getElementById('fgoal').value;
+
+  // Validate
+  let valid = true;
+  document.querySelectorAll('.field-error').forEach(e => e.style.display = 'none');
+
+  if (!name) { document.getElementById('err-fname').style.display = 'block'; valid = false; }
+  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    document.getElementById('err-email').style.display = 'block'; valid = false;
+  }
+  if (!valid) return;
+
+  // Loading state
+  const btn = document.getElementById('submitBtn');
+  btn.disabled = true;
+  btn.classList.add('loading');
+  document.getElementById('formError').style.display = 'none';
+
+  // Build the plan content for email
+  const planSummary = buildEmailPlanSummary(name, goal);
+
+  // Try EmailJS first
+  if (emailjsReady) {
+    try {
+      await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
+        to_name:      name,
+        to_email:     email,
+        goal:         goal || "Complete the race",
+        reply_to:     "training@oneractive.com",
+        plan_preview: planSummary,
+        programme_url: window.location.href + "#programme",
+        from_name:    "Jade Skillen × Oner Active",
+      });
+      showSuccess(email);
+      return;
+    } catch(err) {
+      console.warn("EmailJS error:", err);
+    }
+  }
+
+  // Fallback: open mailto (always works, no backend needed)
+  const subject = encodeURIComponent(`${name}'s 12-Week Hyrox Plan — Oner Active × Jade Skillen`);
+  const body = encodeURIComponent(
+    `Hi ${name},\n\nHere is your free 12-week Hyrox training plan from Jade Skillen and Oner Active.\n\n` +
+    `Your goal: ${goal || 'Complete the race'}\n\n` +
+    `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n` +
+    `PHASE 1 — BUILD (Weeks 1–4)\n` +
+    `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n` +
+    `Goal: Aerobic base, station technique, form over intensity.\n` +
+    `4 sessions/week · RPE 6–7\n\n` +
+    `WEEK 1: Foundation\n` +
+    `Mon – Hyrox intro: 3×SE 500m, 3×SP light, 3×SL light, 5min rest between stations\n` +
+    `Wed – Strength: Goblet squat 4×10, RDL 4×8, KB swing 3×15, Plank 3×45s\n` +
+    `Fri – Hyrox stations: 3×BJ 25m, 2×ROW 500m, 3×WB 15 reps\n` +
+    `Sun – Easy run 25min Z2\n\n` +
+    `WEEK 2: Volume increase\n` +
+    `Mon – Hyrox: 4×SE 500m, 4×SP, 4×SL, 90s rest\n` +
+    `Wed – Strength: Back squat 4×8, Hip hinge 4×8, Press 3×10, Core\n` +
+    `Fri – Combo: SE→SP→SL back to back, x3 rounds, 3min rest\n` +
+    `Sun – Run 30min Z2\n\n` +
+    `WEEK 3: Station focus\n` +
+    `Mon – Hyrox: 5×SE 500m, 3×BJ 50m, 3×WB 20 reps\n` +
+    `Wed – Strength: Deadlift 4×6, Split squat 3×10 each, Pull-up 3×max\n` +
+    `Fri – Endurance: ROW 3×1000m, FC 3×200m, 2min rest\n` +
+    `Sun – Run 35min Z2\n\n` +
+    `WEEK 4: Consolidation\n` +
+    `Mon – Full Hyrox mock (light loads): All 8 stations × 1 round\n` +
+    `Wed – Strength: Total body, moderate load\n` +
+    `Fri – Station repeats x2 of weakest stations\n` +
+    `Sun – Run 30min easy\n\n` +
+    `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n` +
+    `PHASE 2 — DEVELOP (Weeks 5–8)\n` +
+    `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n` +
+    `Goal: Race-pace intervals, progressive overload, station combos.\n` +
+    `4 sessions/week · RPE 7–8\n\n` +
+    `Weeks 5–8 follow a progressive pattern:\n` +
+    `· Monday: 2–3 station combo circuits at race pace\n` +
+    `· Wednesday: Strength (heavier loads, lower reps)\n` +
+    `· Friday: 4–5 station Hyrox blocks with 90s rest\n` +
+    `· Sunday: Tempo run (5K race pace effort, building to 8K by week 8)\n\n` +
+    `Week 8 includes your first full Hyrox simulation (all 8 stations at 70% effort).\n\n` +
+    `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n` +
+    `PHASE 3 — PEAK & TAPER (Weeks 9–12)\n` +
+    `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n` +
+    `Goal: Race intensity, confidence, controlled taper.\n` +
+    `4 → 3 sessions/week · RPE 8–9 → 5–6 (taper)\n\n` +
+    `Week 9: Full Hyrox sim at 85% effort\n` +
+    `Week 10: Peak intensity — race-pace station repeats\n` +
+    `Week 11: Sharpener week — short sharp sessions\n` +
+    `Week 12: TAPER — 3 light sessions, race Saturday\n\n` +
+    `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n` +
+    `RACE DAY CHECKLIST\n` +
+    `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n` +
+    `✓ Kit: EffortlessLift™ Leggings + EasyLift™ Bra (pre-washed)\n` +
+    `✓ Nutrition: Carb load night before, breakfast 2hrs before start\n` +
+    `✓ Warm-up: 15min easy run + station activation drills\n` +
+    `✓ Strategy: Start conservative — negative split is your friend\n` +
+    `✓ Post-race: Tag @oneractive with #TrainForItRaceInIt\n\n` +
+    `View your full interactive plan at: ${window.location.href}#programme\n\n` +
+    `Train hard. Race in it.\n` +
+    `Jade Skillen × Oner Active\n`
+  );
+
+  // Open mailto as fallback
+  const mailtoLink = `mailto:${email}?subject=${subject}&body=${body}`;
+  window.location.href = mailtoLink;
+
+  // Brief delay then show success
+  setTimeout(() => showSuccess(email), 1500);
+}
+
+function buildEmailPlanSummary(name, goal) {
+  return `Hi ${name}! Your 12-week Hyrox plan (goal: ${goal || 'complete the race'}) is ready. View it at: ${window.location.href}#programme`;
+}
+
+function showSuccess(email) {
+  document.getElementById('formWrap').style.display = 'none';
+  document.getElementById('succState').style.display = 'block';
+  document.getElementById('succEmail').textContent = email;
+
+  // Smooth scroll to programme after delay
+  setTimeout(() => {
+    document.getElementById('programme').scrollIntoView({ behavior: 'smooth' });
+  }, 2500);
+}
+
+// ── PHASE SWITCHER ────────────────────────────────────────────────────────────
+function switchPhase(idx) {
+  document.querySelectorAll('.phase-tab').forEach((t,i) => t.classList.toggle('active', i===idx));
+  document.querySelectorAll('.phase-content').forEach((c,i) => c.classList.toggle('active', i===idx));
+}
+
+// ── WEEK TOGGLE ───────────────────────────────────────────────────────────────
+function toggleWeek(hdr) {
+  hdr.classList.toggle('open');
+  hdr.nextElementSibling.classList.toggle('open');
+}
+
+// ── KIT INTERACTIONS ──────────────────────────────────────────────────────────
+function addBag(btn) {
+  const o = btn.textContent;
+  btn.textContent = '✓ Added';
+  btn.style.background = '#2A6A2A';
+  setTimeout(() => { btn.textContent = o; btn.style.background = ''; }, 2000);
+}
+
+function faq(el) {
+  const item = el.closest('.faq-item'), open = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+  if (!open) item.classList.add('open');
+}
+
+// ── SMOOTH SCROLL ─────────────────────────────────────────────────────────────
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const t = document.querySelector(a.getAttribute('href'));
+    if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
+  });
+});
+
+// ── 12-WEEK PROGRAMME DATA ────────────────────────────────────────────────────
+const PROGRAMME = {
+  phases: [
+    // ── PHASE 1: BUILD (Weeks 1–4) ───────────────────────────────────────────
+    {
+      weeks: [
+        {
+          num: 1, title: "Foundation", focus: "Learn the stations · Build aerobic base · RPE 6",
+          days: [
+            { name: "Mon", label: "Hyrox Intro", key: true,
+              desc: "3×SkiErg 500m · 3×Sled Push (light) · 3×Sled Pull · 5min rest between stations",
+              metrics: ["3 stations", "5min rest", "RPE 6"] },
+            { name: "Tue", label: "Rest / Walk", rest: true, desc: "20min easy walk. Foam roll legs and shoulders." },
+            { name: "Wed", label: "Strength", key: true,
+              desc: "Goblet squat 4×10 · Romanian deadlift 4×8 · KB swing 3×15 · Plank 3×45s",
+              metrics: ["4 exercises", "RPE 6"] },
+            { name: "Thu", label: "Active Recovery", desc: "Yoga or light stretching 20min. Focus on hip flexors and thoracic rotation." },
+            { name: "Fri", label: "Hyrox Stations", key: true,
+              desc: "3×Burpee BJ 25m · 2×Row 500m · 3×Wall Balls 15 reps · 2min rest between",
+              metrics: ["3 stations", "2min rest", "RPE 6"] },
+            { name: "Sat", label: "Rest", rest: true, desc: "Complete rest. Hydrate well." },
+            { name: "Sun", label: "Easy Run", desc: "25min Zone 2 run. Should feel conversational throughout.", metrics: ["25min", "Zone 2"] },
+          ]
+        },
+        {
+          num: 2, title: "Volume increase", focus: "Add station reps · 30min run · RPE 6–7",
+          days: [
+            { name: "Mon", label: "Hyrox Volume", key: true,
+              desc: "4×SkiErg 500m · 4×Sled Push · 4×Sled Pull · 90s rest between",
+              metrics: ["4 rounds", "90s rest", "RPE 6-7"] },
+            { name: "Tue", label: "Rest", rest: true, desc: "Rest or 15min easy walk." },
+            { name: "Wed", label: "Strength", key: true,
+              desc: "Back squat 4×8 · Hip hinge 4×8 · DB press 3×10 · Dead bug 3×10",
+              metrics: ["4 exercises", "RPE 6"] },
+            { name: "Thu", label: "Mobility", desc: "Hip flexor stretch · Shoulder circles · Ankle mobility · 20min." },
+            { name: "Fri", label: "Station Combo", key: true,
+              desc: "SE→SP→SL back to back (no rest between) × 3 rounds. 3min rest between rounds.",
+              metrics: ["3 combos", "3min rest", "RPE 7"] },
+            { name: "Sat", label: "Rest", rest: true, desc: "Rest." },
+            { name: "Sun", label: "Easy Run", desc: "30min Zone 2. Add 2 × 30s strides at the end.", metrics: ["30min", "2 strides"] },
+          ]
+        },
+        {
+          num: 3, title: "Station focus", focus: "Weak station targeting · 35min run · RPE 7",
+          days: [
+            { name: "Mon", label: "Hyrox Power", key: true,
+              desc: "5×SkiErg 500m · 3×Burpee BJ 50m · 3×Wall Balls 20 reps · 2min rest",
+              metrics: ["5+3+3", "2min rest", "RPE 7"] },
+            { name: "Tue", label: "Rest", rest: true, desc: "Rest or gentle walk." },
+            { name: "Wed", label: "Strength", key: true,
+              desc: "Deadlift 4×6 · Bulgarian split squat 3×10ea · Pull-up 3×max · Russian twist 3×20",
+              metrics: ["4 exercises", "Heavy", "RPE 7"] },
+            { name: "Thu", label: "Active recovery", desc: "Foam roll · 10min yoga · Hydrate." },
+            { name: "Fri", label: "Endurance stations", key: true,
+              desc: "Row 3×1000m · Farmers Carry 3×200m · 2min rest between exercises",
+              metrics: ["2 stations", "2min rest", "RPE 7"] },
+            { name: "Sat", label: "Rest", rest: true, desc: "Rest." },
+            { name: "Sun", label: "Long run", desc: "35min Zone 2. Consistent pace throughout. No strides today.", metrics: ["35min", "Zone 2"] },
+          ]
+        },
+        {
+          num: 4, title: "Consolidation", focus: "First full Hyrox mock (light) · RPE 6–7",
+          days: [
+            { name: "Mon", label: "Full Hyrox Mock", key: true,
+              desc: "All 8 stations × 1 round at 60% effort. Focus on transitions and technique, not pace.",
+              metrics: ["8 stations", "1 round", "60% effort"] },
+            { name: "Tue", label: "Rest", rest: true, desc: "Full rest. Reflect on weak stations from mock." },
+            { name: "Wed", label: "Strength (light)", key: true,
+              desc: "Total body at moderate load. Squat · Hinge · Push · Pull. 3×10 each.",
+              metrics: ["Total body", "Moderate", "RPE 6"] },
+            { name: "Thu", label: "Technique", desc: "Practice weakest 2 stations from Monday. Focus on form only, no intensity." },
+            { name: "Fri", label: "Station repeats", key: true,
+              desc: "Repeat your 2 weakest stations from Monday × 4 sets each. 2min rest.",
+              metrics: ["2 stations", "4 sets", "RPE 6"] },
+            { name: "Sat", label: "Rest", rest: true, desc: "Rest. You've completed Phase 1 — well done." },
+            { name: "Sun", label: "Easy run", desc: "30min easy. Celebrate completing Phase 1.", metrics: ["30min", "Easy"] },
+          ]
+        }
+      ]
+    },
+    // ── PHASE 2: DEVELOP (Weeks 5–8) ─────────────────────────────────────────
+    {
+      weeks: [
+        {
+          num: 5, title: "Race pace introduction", focus: "First race-pace efforts · Combo circuits · RPE 7",
+          days: [
+            { name: "Mon", label: "Combo circuit", key: true,
+              desc: "SE→SP→SL at race pace × 3 rounds. 90s rest between rounds. Push the SkiErg hard.",
+              metrics: ["Race pace", "3 rounds", "90s rest"] },
+            { name: "Tue", label: "Rest", rest: true, desc: "Rest." },
+            { name: "Wed", label: "Strength (progressive)", key: true,
+              desc: "Squat 5×5 (heavier) · Deadlift 3×5 · Weighted pull-up 3×6 · Farmer hold 3×45s",
+              metrics: ["Heavy lifts", "5×5 squat", "RPE 7-8"] },
+            { name: "Thu", label: "Technique drill", desc: "Sled push technique 20min. Video yourself — check back position and push mechanics." },
+            { name: "Fri", label: "4-station block", key: true,
+              desc: "SE 500m → SP 25m → BJ 50m → ROW 500m × 2 rounds. 3min rest between rounds.",
+              metrics: ["4 stations", "2 rounds", "3min rest"] },
+            { name: "Sat", label: "Rest", rest: true, desc: "Rest." },
+            { name: "Sun", label: "Tempo run", desc: "5K at comfortably hard pace (race-pace effort). Record your time.", metrics: ["5K", "RPE 7-8"] },
+          ]
+        },
+        {
+          num: 6, title: "Intensity build", focus: "Heavier loads · Longer combos · RPE 7–8",
+          days: [
+            { name: "Mon", label: "5-station circuit", key: true,
+              desc: "SE→SP→SL→BJ→ROW × 2 rounds. 4min rest between. Race pace on SkiErg and Row.",
+              metrics: ["5 stations", "2 rounds", "RPE 8"] },
+            { name: "Tue", label: "Rest", rest: true, desc: "Rest. Sleep 8hrs." },
+            { name: "Wed", label: "Strength", key: true,
+              desc: "Squat 5×5 · Hip thrust 4×8 · Lat pulldown 4×10 · Core circuit 15min",
+              metrics: ["Heavy", "4 exercises", "RPE 7"] },
+            { name: "Thu", label: "Active recovery", desc: "Swim 20min or easy bike. Keep HR low." },
+            { name: "Fri", label: "Benchmark session", key: true,
+              desc: "SkiErg 1000m for time → immediate 20 Wall Balls → 400m run. Record all times. Repeat ×2.",
+              metrics: ["Benchmark", "Record time", "RPE 8"] },
+            { name: "Sat", label: "Rest", rest: true, desc: "Rest." },
+            { name: "Sun", label: "Tempo run", desc: "6K at race-pace effort. Focus on even pacing.", metrics: ["6K", "Even pace"] },
+          ]
+        },
+        {
+          num: 7, title: "Specificity", focus: "Race-format training · Full station order · RPE 8",
+          days: [
+            { name: "Mon", label: "Hyrox order", key: true,
+              desc: "Stations 1–4 in Hyrox race order: SE→SP→SL→BJ. Full 1000m runs between. 2 rounds.",
+              metrics: ["Race order", "1000m runs", "RPE 8"] },
+            { name: "Tue", label: "Rest", rest: true, desc: "Rest." },
+            { name: "Wed", label: "Strength (peak)", key: true,
+              desc: "Back squat 5×3 (near max) · Deficit deadlift 4×5 · Weighted dip 3×8 · Sandbag carry 3×50m",
+              metrics: ["Near max", "Heavy", "RPE 8"] },
+            { name: "Thu", label: "Recovery run", desc: "20min very easy jog. Flush out the legs from Wednesday." },
+            { name: "Fri", label: "Stations 5–8", key: true,
+              desc: "Stations 5–8: ROW→FC→SAN→WB with 1000m runs between. 2 rounds.",
+              metrics: ["4 stations", "1000m runs", "RPE 8"] },
+            { name: "Sat", label: "Rest", rest: true, desc: "Rest. Good nutrition and hydration." },
+            { name: "Sun", label: "Tempo run", desc: "7K at race effort. Try to negative split (second half faster).", metrics: ["7K", "Neg split"] },
+          ]
+        },
+        {
+          num: 8, title: "Full simulation", focus: "First full Hyrox simulation at 70–75% · RPE 8",
+          days: [
+            { name: "Mon", label: "Full Hyrox Sim", key: true,
+              desc: "ALL 8 stations with 1000m runs between at 70–75% effort. Note times for each station.",
+              metrics: ["8 stations", "Full sim", "70-75%"] },
+            { name: "Tue", label: "Rest", rest: true, desc: "Full rest. You've earned it. Foam roll." },
+            { name: "Wed", label: "Strength (deload)", key: true,
+              desc: "Moderate loads. Squat 3×8 · Hinge 3×8 · Upper body 3×10. Nothing maximal.",
+              metrics: ["Moderate", "Deload", "RPE 6"] },
+            { name: "Thu", label: "Station review", desc: "Review your sim times. Practice 2 weakest stations at technique level only." },
+            { name: "Fri", label: "Short Hyrox", key: true,
+              desc: "Top 4 stations from sim (best performers) × 3 rounds. Race pace. Celebrate your progress.",
+              metrics: ["4 stations", "Race pace", "RPE 8"] },
+            { name: "Sat", label: "Rest", rest: true, desc: "Rest. Phase 2 complete — you're halfway there." },
+            { name: "Sun", label: "Tempo run", desc: "8K at race effort. Compare to your week 5 5K. You've improved.", metrics: ["8K", "Race effort"] },
+          ]
+        }
+      ]
+    },
+    // ── PHASE 3: PEAK (Weeks 9–12) ───────────────────────────────────────────
+    {
+      weeks: [
+        {
+          num: 9, title: "Peak intensity", focus: "Full sim at 85% · Race-pace every session · RPE 8–9",
+          days: [
+            { name: "Mon", label: "Full Hyrox 85%", key: true,
+              desc: "ALL 8 stations + 1000m runs at 85% effort. This is your benchmark. Record all splits.",
+              metrics: ["8 stations", "85% effort", "RPE 8-9"] },
+            { name: "Tue", label: "Rest", rest: true, desc: "Rest. Ice bath or cold shower if available." },
+            { name: "Wed", label: "Strength (maintain)", key: true,
+              desc: "Squat 4×5 (moderate-heavy) · Deadlift 3×5 · Pull-up 3×max · Core 15min",
+              metrics: ["Maintain", "4 exercises", "RPE 7"] },
+            { name: "Thu", label: "Active recovery", desc: "Easy swim or bike 20min. Keep moving, don't strain." },
+            { name: "Fri", label: "Station repeats (race pace)", key: true,
+              desc: "Weakest 3 stations from Monday × 4 rounds each. Full race pace. 90s rest.",
+              metrics: ["3 stations", "Race pace", "4 rounds"] },
+            { name: "Sat", label: "Rest", rest: true, desc: "Rest." },
+            { name: "Sun", label: "Race-pace run", desc: "6K at full race pace. Strong finish. Record time.", metrics: ["6K", "Race pace", "RPE 9"] },
+          ]
+        },
+        {
+          num: 10, title: "Peak volume", focus: "Hardest week of the plan · RPE 9",
+          days: [
+            { name: "Mon", label: "Station cluster A", key: true,
+              desc: "SE 1000m → SP → SL → BJ 50m × 3 rounds. 2min rest between. All at race pace.",
+              metrics: ["4 stations", "3 rounds", "Race pace"] },
+            { name: "Tue", label: "Rest", rest: true, desc: "Full rest. Sleep is training." },
+            { name: "Wed", label: "Strength (final heavy)", key: true,
+              desc: "Last heavy strength session. Squat 5×3 · Deadlift 3×3 · Heavy rows 4×5.",
+              metrics: ["Last heavy", "5×3", "RPE 8"] },
+            { name: "Thu", label: "Active recovery", desc: "Easy movement only. Stretch and roll." },
+            { name: "Fri", label: "Station cluster B", key: true,
+              desc: "ROW 1000m → FC 200m → SAN 100m → WB 100 reps × 3 rounds. All race pace.",
+              metrics: ["4 stations", "3 rounds", "RPE 9"] },
+            { name: "Sat", label: "Rest", rest: true, desc: "Rest. This is the hardest week — you're doing great." },
+            { name: "Sun", label: "Race-pace run", desc: "5K at absolute race pace. Go for a PB. Record it.", metrics: ["5K", "PB attempt", "RPE 9"] },
+          ]
+        },
+        {
+          num: 11, title: "Sharpener", focus: "Short sharp sessions · Begin reducing volume · RPE 7–8",
+          days: [
+            { name: "Mon", label: "Sharpener circuit", key: true,
+              desc: "SE 500m → SP → ROW 500m → WB 20 reps × 4 rounds. Fast, sharp, confident.",
+              metrics: ["4 stations", "4 rounds", "RPE 8"] },
+            { name: "Tue", label: "Rest", rest: true, desc: "Rest." },
+            { name: "Wed", label: "Strength (reduced)", key: true,
+              desc: "Squat 3×5 (moderate) · Deadlift 2×5 · Upper body 3×8. No grinding.",
+              metrics: ["Reduced vol", "Moderate", "RPE 6"] },
+            { name: "Thu", label: "Rest", rest: true, desc: "Rest. Trust the taper starting." },
+            { name: "Fri", label: "Race simulation (short)", key: true,
+              desc: "4 stations of your choice × 2 rounds. Race effort. Finish feeling strong.",
+              metrics: ["4 stations", "2 rounds", "RPE 8"] },
+            { name: "Sat", label: "Rest", rest: true, desc: "Rest." },
+            { name: "Sun", label: "Easy run", desc: "4K easy. Enjoy it. Race week is almost here.", metrics: ["4K", "Easy", "RPE 5"] },
+          ]
+        },
+        {
+          num: 12, title: "RACE WEEK — Taper", focus: "Trust the taper · 3 light sessions · RACE DAY 🏁",
+          days: [
+            { name: "Mon", label: "Activation", key: true,
+              desc: "3×SE 250m · 3×SP (super light) · 10min easy run. Wake the body up. Nothing taxing.",
+              metrics: ["Light", "Activation", "RPE 4"] },
+            { name: "Tue", label: "REST", rest: true, desc: "Full rest. Hydrate. Eat well. Pack your kit." },
+            { name: "Wed", label: "Shakeout run", desc: "10min very easy jog + 4×100m strides. Stay loose.", metrics: ["10min", "4 strides"] },
+            { name: "Thu", label: "REST", rest: true, desc: "Rest. Finalise race-day logistics. Eat plenty of carbs." },
+            { name: "Fri", label: "Station preview", key: true,
+              desc: "Visit the race venue if possible. Walk the course. 2×SE 250m at race pace. Nothing more.",
+              metrics: ["Course walk", "2×250m SE", "RPE 5"] },
+            { name: "Sat", label: "REST", rest: true, desc: "Rest. Big carb dinner. Sleep early. Kit is laid out and ready." },
+            { name: "Sun", label: "🏁 RACE DAY", key: true,
+              desc: "Warm up 15min. Start slightly conservative. Negative split if possible. You've done the work. RACE IN IT.",
+              metrics: ["15min warm-up", "Race pace", "YOU GOT THIS"] },
+          ]
+        }
+      ]
+    }
+  ]
+};
+
+// ── RENDER WEEKS ──────────────────────────────────────────────────────────────
+function renderWeeks() {
+  PROGRAMME.phases.forEach((phase, pi) => {
+    const container = document.getElementById(`weeks-p${pi}`);
+    phase.weeks.forEach((week, wi) => {
+      const card = document.createElement('div');
+      card.className = 'week-card';
+
+      const header = document.createElement('div');
+      header.className = 'week-header' + (wi === 0 ? ' open' : '');
+      header.onclick = () => toggleWeek(header);
+      header.innerHTML = `
+        <div class="wh-num">W${week.num}</div>
+        <div>
+          <span class="wh-title">${week.title}</span>
+          <span class="wh-focus">${week.focus}</span>
+        </div>
+        <div class="wh-toggle">+</div>
+      `;
+
+      const body = document.createElement('div');
+      body.className = 'week-body' + (wi === 0 ? ' open' : '');
+
+      const grid = document.createElement('div');
+      grid.className = 'day-grid';
+
+      week.days.forEach(day => {
+        const dc = document.createElement('div');
+        dc.className = 'day-card' +
+          (day.rest ? ' rest' : '') +
+          (day.key ? ' key-session' : '');
+
+        let metricsHtml = '';
+        if (day.metrics) {
+          metricsHtml = `<div class="day-metrics">${day.metrics.map(m =>
+            `<span class="day-metric ${m.includes('Zone') || m.includes('Easy') || m.includes('Light') ? 'gray' : ''}">${m}</span>`
+          ).join('')}</div>`;
+        }
+
+        dc.innerHTML = `
+          <div class="day-label">${day.name}</div>
+          <div class="day-name">${day.label}</div>
+          <div class="day-desc">${day.desc}</div>
+          ${metricsHtml}
+        `;
+        grid.appendChild(dc);
+      });
+
+      body.appendChild(grid);
+      card.appendChild(header);
+      card.appendChild(body);
+      container.appendChild(card);
+    });
+  });
+}
+
+// ── DOWNLOAD PLAN AS TEXT FILE ────────────────────────────────────────────────
+function downloadPlan() {
+  let content = `ONER ACTIVE × JADE SKILLEN
+12-WEEK HYROX TRAINING PROGRAMME
+Train for it. Race in it.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+STATION KEY
+SE = SkiErg (1000m)   SP = Sled Push (25m)   SL = Sled Pull (25m)
+BJ = Burpee Broad Jump (50m)   ROW = Rowing (1000m)
+WB = Wall Balls (75/100 reps)   FC = Farmers Carry (200m)   SAN = Sandbag Lunges (100m)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n`;
+
+  PROGRAMME.phases.forEach((phase, pi) => {
+    const phaseNames = ["PHASE 1 — BUILD (Weeks 1–4)", "PHASE 2 — DEVELOP (Weeks 5–8)", "PHASE 3 — PEAK & TAPER (Weeks 9–12)"];
+    content += `${"━".repeat(52)}\n${phaseNames[pi]}\n${"━".repeat(52)}\n\n`;
+    phase.weeks.forEach(week => {
+      content += `WEEK ${week.num}: ${week.title.toUpperCase()}\n${week.focus}\n\n`;
+      week.days.forEach(day => {
+        content += `  ${day.name.padEnd(4)} ${day.label.padEnd(25)} ${day.desc}\n`;
+        if (day.metrics) content += `       ↳ ${day.metrics.join(' · ')}\n`;
+      });
+      content += '\n';
+    });
+  });
+
+  content += `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+RACE DAY CHECKLIST
+✓ Kit: EffortlessLift™ Leggings + EasyLift™ Bra (pre-washed)
+✓ Nutrition: Carb load night before · Breakfast 2hrs before start
+✓ Warm-up: 15min easy run + station activation drills
+✓ Strategy: Start conservative — negative split is your friend
+✓ Post-race: Tag @oneractive with #TrainForItRaceInIt
+
+Train hard. Race in it.
+Jade Skillen × Oner Active
+oneractive.com
+`;
+
+  const blob = new Blob([content], { type: 'text/plain' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'OnerActive_Jade_Skillen_12Week_Hyrox_Plan.txt';
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+// ── INIT ──────────────────────────────────────────────────────────────────────
+renderWeeks();
+</script>
+
+</body>
+</html>
